@@ -22,14 +22,23 @@
     <script src="js/app.js"></script>
     <script src="js/mainCtrl.js"></script>
   </head>
-  <body ng-app="starter" ng-controller='MainCtrl'>
+  <body ng-app="starter">
 
     <ion-pane>
       <ion-header-bar class="bar-stable">
         <h1 class="title">Timer</h1>
       </ion-header-bar>
-      <ion-content>
-      </ion-content>
+      <ion-content ng-controller='MainCtrl'>
+       <div class="range range-balanced"><i class="icon ion-ios7-stopwatch-outline"></i>
+        <input type="range" ng-model="clock" min="0" max="200"><i class="icon ion-ios7-stopwatch"></i>
+      </div>
+      <div class="clock">{{clock}} s</div>
+      <button ng-click="start()" class="button button-full button-royal">START</button>
+      <button ng-click="reset()" class="button button-full button-assertive">RESET</button>
+    </ion-content>
+    <div class="bar bar-footer bar-positive">
+      <div class="center"><small>&copy; 2014, Z. Ames</small></div>
+    </div>
     </ion-pane>
   </body>
 </html>
